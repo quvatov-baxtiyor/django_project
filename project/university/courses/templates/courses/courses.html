@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+    <h2>Specialities: </h2>
+
+    <form>
+        <input name='search' value="{{ search }}" placeholder="search specialities...">
+        <button type="submit">Search by name</button>
+    </form>
+
+    <ul>
+    {% for speciality in specialities %}
+        <li>We have a speciality named <b>{{ speciality.name }}</b>. Its registration code is {{ speciality.code }}.<br> We added this speciality to our community in {{ speciality.start_date }} and this major is active right now {{ speciality.isactive }}</li>
+        <br>
+    {% empty %}
+        <p>No Speciality</p>
+    {% endfor %}
+    </ul>
+</body>
+</html>
